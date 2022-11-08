@@ -5,6 +5,7 @@ import {
     RiShoppingCart2Line,
     RiShoppingCartFill
 } from 'react-icons/ri';
+import { Busca } from 'components/Busca';
 
 
 const iconeProps = {
@@ -29,7 +30,7 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.busca}>
-
+                <Busca />
             </div>
 
             <div className={styles.icones}>
