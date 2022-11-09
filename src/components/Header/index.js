@@ -1,10 +1,17 @@
 import styles from './Header.module.scss';
 
 
-export const Header = () => {
+export const Header = ({ titulo, descricao, className = '', imagem }) => {
     return (
-        <div>
+        <header className={`${styles.header} ${className}`}>
+            <div className={styles['header-texto']}>
+                <h1>{titulo}</h1>
+                <h2>{descricao}</h2>
+            </div>
 
-        </div>
+            <div className={styles['header-imagem']}>
+                <img alt={titulo} src={imagem} />
+            </div>
+        </header>
     );
 }
