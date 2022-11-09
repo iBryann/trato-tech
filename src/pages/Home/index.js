@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from 'components/Header';
 import styles from './Home.module.scss';
 import relogio from 'assets/inicial.png';
+import { useSelector } from 'react-redux';
 
 
 export const Home = () => {
     const navigate = useNavigate();
+    const categorias = useSelector(state => state.categorias);
 
     return (
         <div>
