@@ -230,9 +230,17 @@ const initialState = [{
     categoria: 'som'
 }];
 
-const _itensSlice = createSlice({
+const itensSlice = createSlice({
     name: 'itens',
     initialState,
+    reducers: {
+        mudarFavorito: (state, { payload }) => {
+            const item = state.find(item => item.id === payload);
+
+            if (item) item.favorito = !item.favorito;
+        }
+    }
 });
 
-export const itensSlice = _itensSlice.reducer;
+export const itensReducer = itensSlice.reducer;
+export const { mudarFavorito } = itensSlice.actions;

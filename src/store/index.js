@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { itensSlice } from './reducers/itens';
-import { categoriasSlice } from './reducers/categorias';
+import { itensReducer } from './reducers/itens';
+import { carrinhoReducer } from './reducers/carrinho';
+import { categoriasReducer } from './reducers/categorias';
 
 
 export const store = configureStore({
     reducer: {
-        itens: itensSlice,
-        categorias: categoriasSlice
+        itens: itensReducer,
+        carrinho: carrinhoReducer,
+        categorias: categoriasReducer,
     }
 });

@@ -44,9 +44,9 @@ const initialState = [{
     descricao: 'Curta suas músicas e seus filmes com a melhor qualidade!'
 }];
 
-const _categoriasSlice = createSlice({
+const categoriasSlice = createSlice({
     name: 'categorias',
     initialState
 });
 
-export const categoriasSlice = _categoriasSlice.reducer;
+export const categoriasReducer = categoriasSlice.reducer;
