@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
+const initialState = [];
+
 const carrinhoSlice = createSlice({
     name: 'carrinho',
-    initialState: [],
+    initialState,
     reducers: {
         mudarCarrinho: (state, { payload }) => {
             const temItem = state.some(item => item.id === payload);
@@ -19,10 +21,17 @@ const carrinhoSlice = createSlice({
                     quantidade: 1
                 }
             ];
-        }
+        },
+        mudarQuantidade: (state, { payload }) => {
+            const { id, quantidade } = payload;
+            const item = state.find(item => item.id === id);
+
+            if (item) item.quantidade += quantidade;
+        },
+        resetarCarrinho: () => initialState,
     }
 });
 
 
 export const carrinhoReducer = carrinhoSlice.reducer;
-export const { mudarCarrinho } = carrinhoSlice.actions;
+export const { mudarCarrinho, mudarQuantidade, resetarCarrinho } = carrinhoSlice.actions;
